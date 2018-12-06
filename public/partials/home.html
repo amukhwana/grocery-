@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="text-center">
+    <h1>Welcome to Ann's</h1>
+    <form ng-submit="goToProductsPage()">
+      Search Product: <input ng-change="setInitSearchValue()" ng-model="item" type="text" name="Product Name"><br>
+    </form>
+  </div>
+   <div class="row">
+    <div class="product col-sm-6 col-md-4" ng-repeat="item in results">
+        <div class="image">
+            <a href="shop-detail.html">
+                <img src="img/product3.jpg" alt="" class="img-responsive image1">
+            </a>
+        </div>
+        <div class="text">
+            <h3><a ng-click="getProduct(item.id)">{{ item.name }}</a></h3>
+            <p class="price">${{ item.price }}</p>
+            <p class="buttons">
+                <a ng-click="getProduct(item.id)" class="btn btn-default">View detail</a>
+                <a ng-click="addToCart(item.id)" class="btn btn-default">Add to cart</a>
+            </p>
+
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-md-7">
+      <img src="/pics/plants.jpg" class="img-rounded" id="plant-photo" alt="Organic plants">
+    </div>
+    <div class="col-sm-4 col-md-5 text-center">
+      <div id="home-text">
+        <p>
+          Ann's Food Store is all about getting organic food from local farms in Juja to your doorstep by means of using drones. No need to drive to the grocery store, just order online and let our drones do the rest. Make an account, place an order, and watch your packages in real time fly their way to your front door.
+        </p>
+    </div>
+      <img src="/pics/drone.jpg" class="img-rounded" id="drone-photo" alt="Organic plants">
+    </div>
+    <div id="empty-space">
+
+    </div>
+  </div>
+
+</div>
